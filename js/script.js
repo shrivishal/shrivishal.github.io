@@ -1,2 +1,1 @@
-// script.js
-console.log("Website loaded!");
+console.log("Spotify-style site loaded!");
