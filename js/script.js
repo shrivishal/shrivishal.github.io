@@ -1,1 +1,1 @@
-console.log("Spotify-style site loaded!");
+console.log("Spotify-style portfolio loaded!");
