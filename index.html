@@ -3,64 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Spotify-style Portfolio</title>
+  <title>My Spotify Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="logo">MyName</div>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="app">
 
-  <section class="hero">
-    <h1>Hello, I'm MyName</h1>
-    <p>Creating harmony between code and creativity.</p>
-    <a href="#projects" class="play-button">▶ Play Portfolio</a>
-  </section>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo">MyName</div>
+      <nav>
+        <ul>
+          <li><a href="#home">🏠 Home</a></li>
+          <li><a href="#about">👤 About</a></li>
+          <li><a href="#projects">🎧 Projects</a></li>
+          <li><a href="#contact">📩 Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt, sem non facilisis volutpat, lorem libero posuere lorem, nec fermentum sapien nisi a sapien.</p>
-  </section>
+    <!-- MAIN CONTENT -->
+    <main class="content">
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-list">
-      <div class="project-card">
-        <h3>Project Echo</h3>
-        <p>A futuristic music streaming concept built with React and Node.js. Fast, immersive, and API-rich.</p>
-      </div>
-      <div class="project-card">
-        <h3>VisualGroove</h3>
-        <p>Generative art meets sound — a browser-based canvas powered by p5.js and Web Audio API.</p>
-      </div>
-    </div>
+      <section class="hero" id="home">
+        <h1>Hello, I'm MyName</h1>
+        <p>Building smooth digital experiences, inspired by rhythm.</p>
+      </section>
 
-    <div class="spotify-embed">
-      <iframe style="border-radius:12px" 
-        src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator"
-        width="100%" height="152" frameBorder="0" allowfullscreen="" 
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-      </iframe>
-    </div>
-  </section>
+      <section id="about">
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra dolor sit amet velit efficitur, ut fermentum leo volutpat.</p>
+      </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email me at: <a href="mailto:myemail@example.com">myemail@example.com</a></p>
-  </section>
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="album-grid">
+          <div class="album-card">
+            <img src="images/cover1.jpg" alt="Project Echo" />
+            <p>Project Echo</p>
+          </div>
+          <div class="album-card">
+            <img src="images/cover2.jpg" alt="VisualGroove" />
+            <p>VisualGroove</p>
+          </div>
+        </div>
+      </section>
 
-  <footer>
-    <p>© 2025 MyName. Powered by GitHub Pages.</p>
-  </footer>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>📧 <a href="mailto:myemail@example.com">myemail@example.com</a></p>
+      </section>
 
-  <script src="js/script.js"></script>
+      <footer>
+        <p>© 2025 MyName. Inspired by Spotify.</p>
+      </footer>
+
+    </main>
+
+  </div>
 </body>
 </html>
