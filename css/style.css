@@ -1,8 +1,9 @@
 :root {
   --bg: #121212;
-  --text: #fff;
-  --accent: #1db954;
+  --bg-light: #181818;
+  --text: #ffffff;
   --muted: #b3b3b3;
+  --accent: #1db954;
 }
 
 * {
@@ -19,14 +20,14 @@ body {
 }
 
 header {
+  background-color: #000;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #000;
-  padding: 20px 40px;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .logo {
@@ -36,14 +37,15 @@ header {
 }
 
 nav ul {
-  display: flex;
   list-style: none;
-  gap: 20px;
+  display: flex;
+  gap: 30px;
 }
 
 nav ul li a {
-  text-decoration: none;
   color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
   transition: color 0.3s;
 }
 
@@ -52,58 +54,71 @@ nav ul li a:hover {
 }
 
 .hero {
-  padding: 80px 40px;
-  background: linear-gradient(to bottom, #1db95433, transparent);
+  background: linear-gradient(to right, #1db95433, transparent);
+  padding: 100px 40px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--muted);
 }
 
 section {
   padding: 60px 40px;
-  max-width: 960px;
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--accent);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .project-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
 .project-card {
-  background-color: #181818;
+  background-color: var(--bg-light);
   padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.3s;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
   transform: scale(1.03);
+  box-shadow: 0 0 10px #1db95433;
 }
 
 .project-card h3 {
   margin-bottom: 10px;
+  font-size: 1.3rem;
   color: var(--text);
 }
 
 footer {
-  text-align: center;
-  padding: 40px;
   background-color: #000;
   color: var(--muted);
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
