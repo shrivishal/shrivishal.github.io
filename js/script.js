@@ -16,13 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
       const isDark = document.body.getAttribute('data-theme') === 'dark';
       // If it's dark, set it to light; if it's light, set it to dark
       document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      // Change the icon on the button to match the new theme
-      // (moon for dark, sun for light)
-      themeToggle.querySelector('.material-symbols-rounded').textContent = isDark ? 'dark_mode' : 'light_mode';
+      // Update icon
+      const icon = themeToggle.querySelector('.material-symbols-rounded');
+      if (icon) icon.textContent = isDark ? 'dark_mode' : 'light_mode';
     });
     // When the page loads, set the icon to match the current theme
     const isDark = document.body.getAttribute('data-theme') === 'dark';
-    themeToggle.querySelector('.material-symbols-rounded').textContent = isDark ? 'light_mode' : 'dark_mode';
+    const icon = themeToggle.querySelector('.material-symbols-rounded');
+    if (icon) icon.textContent = isDark ? 'light_mode' : 'dark_mode';
   }
 
   // --- SIDEBAR EXPAND/COLLAPSE LOGIC ---
@@ -38,6 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
       // This adds or removes a special class on the sidebar
       // The CSS uses this class to make the sidebar wider or thinner
       sidebar.classList.toggle('sidebar-expanded');
+    });
+    // Keyboard accessibility
+    logoBtn.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        sidebar.classList.toggle('sidebar-expanded');
+        e.preventDefault();
+      }
     });
   }
 });
