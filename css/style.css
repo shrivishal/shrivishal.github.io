@@ -99,7 +99,7 @@ body, html {
   width: 88px;
   min-width: 88px;
   max-width: 88px;
-  background: #fff !important; /* pure white for Material 3 look */
+  background: var(--m3-sidebar-bg);
   box-shadow: var(--m3-sidebar-shadow);
   border-radius: 0 24px 24px 0;
   padding: 20px 0 16px 0;
@@ -116,10 +116,6 @@ body, html {
 }
 
 .logo {
-  /*
-    The logo at the top of the sidebar
-    - Click to expand/collapse the sidebar
-  */
   width: 48px;
   height: 48px;
   margin-bottom: 24px;
@@ -128,7 +124,7 @@ body, html {
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  background: #f5f5f5 !important; /* very light neutral for logo bg */
+  background: var(--m3-sidebar-active);
   color: var(--m3-sidebar-icon);
 }
 
@@ -226,6 +222,21 @@ body, html {
 .sidebar .sidebar-action-btn:hover {
   background: #ececec !important;
   color: var(--m3-primary);
+}
+
+/* --- Optional: Decorative sidebar image at the bottom --- */
+.sidebar-image {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-top: 18px;
+  box-shadow: 0 2px 8px #0001;
+  align-self: center;
+  opacity: 0.92;
+}
+.sidebar .sidebar-image {
+  position: static;
 }
 
 /*
