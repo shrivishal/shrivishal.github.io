@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
     themeToggle.querySelector('.material-symbols-rounded').textContent = isDark ? 'dark_mode' : 'light_mode';
   });
+  // Set initial icon based on theme
+  const isDark = document.body.getAttribute('data-theme') === 'dark';
+  themeToggle.querySelector('.material-symbols-rounded').textContent = isDark ? 'light_mode' : 'dark_mode';
 });
 
 console.log("Material 3 Expressive portfolio loaded!");
