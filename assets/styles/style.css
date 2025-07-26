@@ -1,3 +1,725 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap');
+/*
+  style.css for Vishal Shrivastava's Material 3 Expressive Portfolio
+  ---------------------------------------------------------------
+  This file contains all the design, layout, and responsive rules for the site.
+  - Uses Material 3 color palette and elevation (shadows)
+  - Sidebar navigation with expand/collapse
+  - Responsive for desktop and mobile
+  - Works with script.js for interactivity
+  
+  Each section is commented to help you learn how the design works!
+*/
+
+:root {
+  /*
+    Material 3 color variables
+    - These are used throughout the site for backgrounds, text, and accents
+    - Change these to quickly update the color theme
+  */
+  --m3-primary: #6750a4;
+  --m3-secondary: #dc362e;
+  --m3-tertiary: #ffb300;
+  --m3-background: #f8fafd;
+  --m3-surface: #fff;
+  --m3-surface-variant: #f3edf7;
+  --m3-outline: #79747e;
+  --m3-text: #1c1b1f;
+  --m3-muted: #49454f;
+  --m3-sidebar-bg: #fff;
+  --m3-sidebar-icon: #49454f;
+  --m3-sidebar-active: #f5f5f5;
+  --m3-dark-bg: #232025;
+  --m3-dark-surface: #18171a;
+  --m3-dark-sidebar-bg: #232025;
+  --m3-dark-sidebar-icon: #e6e1e5;
+  --m3-dark-sidebar-active: #39334a;
+  --m3-elevation-1: 0 1.5px 6px #6750a41a;
+  --m3-elevation-2: 0 6px 24px #6750a433, 0 1.5px 6px #6750a41a;
+  --m3-sidebar-shadow: 0 2px 8px 0 #1a1a1a0d, 0 1.5px 6px #6750a41a;
+}
+
+body[data-theme="dark"] {
+  /*
+    These variables override the light theme when dark mode is active
+    - The script.js file toggles this mode
+  */
+  --m3-background: #18171a;
+  --m3-surface: #232025;
+  --m3-surface-variant: #232025;
+  --m3-text: #fff;
+  --m3-muted: #bdb6c2;
+  --m3-sidebar-bg: #18171a;
+  --m3-sidebar-icon: #fff;
+  --m3-sidebar-active: #28243a;
+  --m3-sidebar-shadow: 0 2px 8px 0 #00000033, 0 1.5px 6px #0002;
+}
 
 /* Update image references to assets/images/ if any exist in CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap');
+
+/*
+  Reset default browser styles for all elements
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  /*
+    Set up the main font, background, and text color
+    - Uses Google Sans for a modern look
+    - Smooth transitions for theme changes
+  */
+  background: var(--m3-background);
+  color: var(--m3-text);
+  font-family: 'Google Sans', 'Roboto', 'Poppins', Arial, sans-serif;
+  font-size: 1.12rem;
+  letter-spacing: 0.01em;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+.app {
+  /*
+    The main app container uses flex to lay out the sidebar and content
+  */
+  display: flex;
+  min-height: 100vh;
+  background: var(--m3-background);
+}
+
+/*
+  SIDEBAR / NAVIGATION
+  --------------------
+  The sidebar contains navigation links and the dark mode toggle.
+  It can expand/collapse (see .sidebar-expanded below).
+*/
+.sidebar {
+  width: 88px;
+  min-width: 88px;
+  max-width: 88px;
+  background: var(--m3-sidebar-bg) !important;
+  box-shadow: var(--m3-sidebar-shadow);
+  border-radius: 0 24px 24px 0;
+  padding: 20px 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--m3-sidebar-active);
+  color: var(--m3-sidebar-icon);
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s, width 0.25s, height 0.25s, font-size 0.25s, transform 0.25s;
+}
+
+.sidebar nav ul {
+  /*
+    Navigation list (vertical by default)
+  */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+}
+
+.sidebar nav ul li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar nav ul li a {
+  /*
+    Each navigation link
+    - Shows icon and (when expanded) text
+    - Subtle hover and active states
+  */
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  color: var(--m3-sidebar-icon);
+  font-weight: 500;
+  font-size: 1rem; /* 16px */
+  border-radius: 16px;
+  padding: 0 8px;
+  height: 48px;
+  min-width: 48px;
+  width: 72px;
+  transition: background 0.2s, color 0.2s, transform 0.18s cubic-bezier(.4,0,.2,1);
+  margin: 0 auto;
+  text-align: left;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+.sidebar nav ul li a .material-symbols-rounded {
+  /*
+    The icon for each nav item
+  */
+  font-size: 1.5rem; /* 24px */
+  display: block;
+}
+
+.sidebar nav ul li a span:not(.material-symbols-rounded) {
+  /*
+    The text for each nav item (hidden in collapsed mode)
+  */
+  display: none;
+}
+
+.sidebar .sidebar-actions {
+  /*
+    Container for the dark mode toggle button at the bottom
+  */
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+.sidebar .sidebar-action-btn {
+  /*
+    The dark mode toggle button
+    - Small, circular, minimal
+  */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  border: none;
+  background: var(--m3-sidebar-active);
+  color: var(--m3-sidebar-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;
+  margin-bottom: 0;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  gap: 0.7em;
+}
+
+.sidebar .sidebar-action-btn .material-symbols-rounded {
+  display: inline-block !important;
+  font-size: 1.5rem;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.sidebar .sidebar-action-label {
+  display: none;
+}
+
+.sidebar.sidebar-expanded .sidebar-action-label {
+  display: inline-block;
+  color: var(--m3-sidebar-icon);
+  font-size: 1.08rem;
+  font-weight: 500;
+  margin-left: 4px;
+  letter-spacing: 0.01em;
+  opacity: 0.85;
+}
+
+/* --- Optional: Decorative sidebar image at the bottom --- */
+.sidebar-image {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px #0001;
+  align-self: center;
+  opacity: 0.92;
+  background: var(--m3-sidebar-bg);
+}
+.sidebar .sidebar-image {
+  position: static;
+}
+
+/* Expanded sidebar: show label for dark mode toggle */
+.sidebar.sidebar-expanded .sidebar-actions .sidebar-action-btn {
+  width: auto;
+  min-width: 48px;
+  padding: 0 18px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.7em;
+}
+.sidebar.sidebar-expanded .sidebar-actions .sidebar-action-label {
+  display: inline-block;
+  color: var(--m3-sidebar-icon);
+  font-size: 1.08rem;
+  font-weight: 500;
+  margin-left: 4px;
+  letter-spacing: 0.01em;
+  opacity: 0.85;
+}
+.sidebar .sidebar-actions .sidebar-action-label {
+  display: none;
+}
+
+/* --- Improved dark mode contrast --- */
+body[data-theme="dark"] {
+  --m3-background: #18171a;
+  --m3-surface: #232025;
+  --m3-surface-variant: #232025;
+  --m3-text: #fff;
+  --m3-muted: #bdb6c2;
+  --m3-sidebar-bg: #18171a;
+  --m3-sidebar-icon: #fff;
+  --m3-sidebar-active: #28243a;
+  --m3-sidebar-shadow: 0 2px 8px 0 #00000033, 0 1.5px 6px #0002;
+}
+
+/* --- Shiny thin gradient border for cards --- */
+.main-card, .about-card, .album-card {
+  border: 2px solid transparent;
+  border-radius: 24px;
+  background-clip: padding-box;
+  position: relative;
+  z-index: 1;
+}
+.main-card::before, .about-card::before, .album-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 0.5px;
+  background: linear-gradient(90deg, #ffb300, #6750a4 40%, #00bfae 80%, #ffb300);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+.main-card, .about-card {
+  overflow: hidden;
+}
+.album-card {
+  border-radius: 20px;
+}
+.album-card::before {
+  border-radius: 20px;
+}
+
+.content {
+  flex: 1;
+  margin-left: 88px;
+  background: var(--m3-background);
+  padding: 56px 56px 40px 56px;
+  overflow-y: auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: margin-left 0.25s cubic-bezier(.4,0,.2,1);
+}
+.sidebar.sidebar-expanded ~ .content {
+  margin-left: 220px;
+}
+@media (max-width: 900px) {
+  .content {
+    margin-left: 0;
+    padding: 18px 4vw 12px 4vw;
+  }
+  .sidebar.sidebar-expanded ~ .content {
+    margin-left: 0;
+  }
+}
+h1 {
+  /*
+    Main heading style (hero section)
+  */
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: var(--m3-primary);
+  letter-spacing: -1px;
+  background: var(--m3-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2, .about-section-title, .main-section-title {
+  /*
+    Section headings
+  */
+  font-size: 1.7rem;
+  margin: 40px 0 18px;
+  color: var(--m3-secondary);
+  font-weight: 700;
+}
+
+.hero p, .about-card p, .main-card p {
+  /*
+    Paragraphs in hero/about/main cards
+  */
+  color: var(--m3-muted);
+  font-size: 1.18rem;
+}
+
+.main-card, .about-card {
+  /*
+    Material 3 card style for main/about sections
+  */
+  background: var(--m3-surface);
+  border-radius: 24px;
+  box-shadow: var(--m3-elevation-1);
+  padding: 48px 40px 36px 40px;
+  margin-bottom: 40px;
+  border: 1px solid var(--m3-surface-variant);
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: box-shadow 0.22s cubic-bezier(.4,0,.2,1), transform 0.18s cubic-bezier(.4,0,.2,1);
+}
+
+.main-card {
+  background: var(--m3-gradient);
+}
+
+.main-card section, .about-card section {
+  background: var(--m3-surface);
+  border-radius: 18px;
+  box-shadow: none;
+  padding: 32px 24px 24px 24px;
+  margin-bottom: 32px;
+  border: 1px solid var(--m3-surface-variant);
+}
+
+.album-grid {
+  /*
+    Grid for project cards
+  */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 32px;
+  margin-top: 18px;
+}
+
+.album-card {
+  /*
+    Each project card
+  */
+  background: var(--m3-surface);
+  border-radius: 20px;
+  box-shadow: var(--m3-elevation-1);
+  padding: 22px 16px 18px 16px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--m3-surface-variant);
+}
+
+.album-card:hover {
+  /*
+    Project card hover effect
+  */
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: var(--m3-elevation-2);
+}
+
+.album-card img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px #0001;
+}
+
+.album-card p {
+  color: var(--m3-text);
+  font-weight: 500;
+  font-size: 1.13rem;
+}
+
+a {
+  color: var(--m3-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--m3-secondary);
+}
+
+footer {
+  margin-top: 56px;
+  color: var(--m3-muted);
+  font-size: 1.08rem;
+  text-align: center;
+  padding-bottom: 16px;
+}
+
+/*
+  Responsive design for tablets and mobile
+  ---------------------------------------
+  The sidebar moves to the top and the layout stacks vertically.
+*/
+@media (max-width: 900px) {
+  .sidebar {
+    position: static;
+    width: 100vw;
+    min-width: unset;
+    max-width: unset;
+    height: auto;
+    min-height: unset;
+    flex-direction: row;
+    border-radius: 0 0 24px 24px;
+    box-shadow: none;
+    padding: 8px 0 8px 0;
+    gap: 0;
+    justify-content: space-between;
+    overflow: visible;
+    align-items: center;
+  }
+  .sidebar nav ul {
+    flex-direction: row;
+    gap: 2px;
+    align-items: center;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .sidebar nav ul li {
+    justify-content: center;
+    width: auto;
+  }
+  .sidebar nav ul li a {
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 16px;
+    font-size: 1.1rem;
+  }
+  .sidebar nav ul li a .material-symbols-rounded {
+    font-size: 1.5rem;
+  }
+  .sidebar .sidebar-actions {
+    margin-top: 0;
+    padding-bottom: 0;
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+    width: auto;
+  }
+  .sidebar .sidebar-action-btn {
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    padding: 0;
+  }
+  .sidebar .sidebar-action-label {
+    display: none !important;
+  }
+  .sidebar-favicon {
+    width: 40px;
+    height: 40px;
+    margin: 0 8px 0 0;
+    padding: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    padding: 12px 8px;
+    gap: 12px;
+  }
+  .logo {
+    font-size: 1.3rem;
+  }
+  .sidebar nav ul {
+    gap: 8px;
+  }
+  .content {
+    padding: 18px 4vw 12px 4vw;
+  }
+  h1 {
+    font-size: 2.1rem;
+  }
+  h2, .about-section-title, .main-section-title {
+    font-size: 1.15rem;
+  }
+  .album-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .about-card, .main-card {
+    padding: 18px 8px 16px 8px;
+  }
+}
+
+/*
+  Material 3 expressive interactive states
+  ---------------------------------------
+  These rules add smooth transitions and focus/hover effects to cards and buttons.
+*/
+.sidebar nav ul li a,
+.album-card,
+.about-card,
+.main-card,
+button,
+input[type="button"],
+input[type="submit"] {
+  transition: box-shadow 0.22s cubic-bezier(.4,0,.2,1),
+              background 0.18s cubic-bezier(.4,0,.2,1),
+              color 0.18s cubic-bezier(.4,0,.2,1),
+              transform 0.18s cubic-bezier(.4,0,.2,1);
+  will-change: box-shadow, background, color, transform;
+}
+
+.sidebar nav ul li a:active,
+.album-card:active,
+.about-card:active,
+.main-card:active {
+  transform: scale(0.97);
+  box-shadow: 0 1px 4px #6750a41a;
+}
+
+.sidebar nav ul li a:focus-visible,
+.album-card:focus-visible,
+.about-card:focus-visible,
+.main-card:focus-visible {
+  outline: 2px solid var(--m3-primary);
+  outline-offset: 2px;
+  z-index: 2;
+}
+
+.album-card:hover,
+.about-card:hover,
+.main-card:hover {
+  box-shadow: 0 6px 24px #6750a433, 0 1.5px 6px #6750a41a;
+  transform: translateY(-2px) scale(1.025);
+  cursor: pointer;
+}
+
+.sidebar nav ul li a:hover {
+  background: var(--m3-surface-variant);
+  color: var(--m3-primary);
+  transform: translateY(-1px) scale(1.04);
+}
+
+button, input[type="button"], input[type="submit"] {
+  border: none;
+  border-radius: 8px;
+  background: var(--m3-primary);
+  color: var(--m3-on-primary);
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  box-shadow: 0 1.5px 6px #6750a41a;
+  transition: box-shadow 0.22s cubic-bezier(.4,0,.2,1),
+              background 0.18s cubic-bezier(.4,0,.2,1),
+              color 0.18s cubic-bezier(.4,0,.2,1),
+              transform 0.18s cubic-bezier(.4,0,.2,1);
+}
+button:hover, input[type="button"]:hover, input[type="submit"]:hover {
+  background: var(--m3-accent);
+  color: var(--m3-on-primary);
+  box-shadow: 0 6px 24px #00bfae33, 0 1.5px 6px #6750a41a;
+  transform: translateY(-2px) scale(1.04);
+}
+button:active, input[type="button"]:active, input[type="submit"]:active {
+  transform: scale(0.97);
+  box-shadow: 0 1px 4px #6750a41a;
+}
+button:focus-visible, input[type="button"]:focus-visible, input[type="submit"]:focus-visible {
+  outline: 2px solid var(--m3-primary);
+  outline-offset: 2px;
+}
+
+.sidebar-action-favicon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  background: none;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.sidebar-action-favicon::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url('../images/favicon.svg') center/cover no-repeat;
+  border-radius: 50%;
+  box-shadow: 0 1.5px 6px #6750a41a;
+}
+.sidebar.sidebar-expanded .sidebar-action-favicon {
+  margin-right: 8px;
+}
+.sidebar .sidebar-action-btn .material-symbols-rounded {
+  display: none !important;
+}
+
+.project-list {
+  margin: 24px 0 0 0;
+  padding-left: 24px;
+  font-size: 1.18rem;
+  color: var(--m3-text);
+  line-height: 1.7;
+  font-weight: 500;
+}
+.project-list li {
+  margin-bottom: 10px;
+  list-style: disc inside;
+  opacity: 0.85;
+}
+
+.sidebar-favicon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  align-self: center;
+  box-shadow: 0 2px 8px #0002;
+  background: var(--m3-sidebar-active);
+  padding: 6px;
+  object-fit: contain;
+  transition: box-shadow 0.18s, background 0.18s;
+  border: 2px solid var(--m3-primary);
+}
+body[data-theme="dark"] .sidebar-favicon {
+  background: #232025;
+  border: 2px solid #fff;
+}
