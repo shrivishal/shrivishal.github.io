@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--
+    The <head> contains meta info, fonts, and links to CSS.
+    - Google Sans and Material Symbols are loaded from Google Fonts.
+    - style.css contains all the design rules.
+  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Vishal Shrivastava</title>
@@ -9,7 +14,12 @@
 </head>
 <body>
   <div class="app">
-    <!-- SIDEBAR -->
+    <!--
+      SIDEBAR: Navigation and dark mode toggle (same as main page)
+      - The logo at the top can expand/collapse the sidebar.
+      - Navigation uses Material icons and text.
+      - The dark mode button is at the bottom.
+    -->
     <aside class="sidebar">
       <div class="logo"><span class="material-symbols-rounded">apps</span></div>
       <nav>
@@ -24,7 +34,10 @@
         <button class="sidebar-action-btn" id="theme-toggle" title="Toggle dark mode"><span class="material-symbols-rounded">dark_mode</span></button>
       </div>
     </aside>
-    <!-- MAIN CONTENT -->
+    <!--
+      MAIN CONTENT: About card with sections for skills, philosophy, and fun fact.
+      - Each section is styled as a Material card.
+    -->
     <main class="content">
       <div class="about-card">
         <section class="hero">
@@ -55,6 +68,12 @@
       </footer>
     </main>
   </div>
+  <!--
+    script.js adds interactivity:
+    - Dark mode toggle
+    - Sidebar expand/collapse
+    - See script.js for details
+  -->
   <script src="js/script.js"></script>
 </body>
 </html>

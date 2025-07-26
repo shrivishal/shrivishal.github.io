@@ -1,8 +1,21 @@
 /*
-  Material 3 Expressive Theme
-  Updated for desktop & mobile responsiveness
+  style.css for Vishal Shrivastava's Material 3 Expressive Portfolio
+  ---------------------------------------------------------------
+  This file contains all the design, layout, and responsive rules for the site.
+  - Uses Material 3 color palette and elevation (shadows)
+  - Sidebar navigation with expand/collapse
+  - Responsive for desktop and mobile
+  - Works with script.js for interactivity
+  
+  Each section is commented to help you learn how the design works!
 */
+
 :root {
+  /*
+    Material 3 color variables
+    - These are used throughout the site for backgrounds, text, and accents
+    - Change these to quickly update the color theme
+  */
   --m3-primary: #6750a4;
   --m3-secondary: #dc362e;
   --m3-tertiary: #ffb300;
@@ -12,9 +25,9 @@
   --m3-outline: #79747e;
   --m3-text: #1c1b1f;
   --m3-muted: #49454f;
-  --m3-sidebar-bg: #f3edf7;
+  --m3-sidebar-bg: #fff;
   --m3-sidebar-icon: #49454f;
-  --m3-sidebar-active: #e6dffe;
+  --m3-sidebar-active: #f5f5f5;
   --m3-dark-bg: #232025;
   --m3-dark-surface: #18171a;
   --m3-dark-sidebar-bg: #232025;
@@ -22,9 +35,14 @@
   --m3-dark-sidebar-active: #39334a;
   --m3-elevation-1: 0 1.5px 6px #6750a41a;
   --m3-elevation-2: 0 6px 24px #6750a433, 0 1.5px 6px #6750a41a;
+  --m3-sidebar-shadow: 0 2px 8px 0 #1a1a1a0d, 0 1.5px 6px #6750a41a;
 }
 
 body[data-theme="dark"] {
+  /*
+    These variables override the light theme when dark mode is active
+    - The script.js file toggles this mode
+  */
   --m3-background: var(--m3-dark-bg);
   --m3-surface: var(--m3-dark-surface);
   --m3-surface-variant: #2c2930;
@@ -33,10 +51,14 @@ body[data-theme="dark"] {
   --m3-sidebar-bg: var(--m3-dark-sidebar-bg);
   --m3-sidebar-icon: var(--m3-dark-sidebar-icon);
   --m3-sidebar-active: var(--m3-dark-sidebar-active);
+  --m3-sidebar-shadow: 0 2px 8px 0 #00000033, 0 1.5px 6px #0002;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap');
 
+/*
+  Reset default browser styles for all elements
+*/
 * {
   margin: 0;
   padding: 0;
@@ -44,6 +66,11 @@ body[data-theme="dark"] {
 }
 
 body, html {
+  /*
+    Set up the main font, background, and text color
+    - Uses Google Sans for a modern look
+    - Smooth transitions for theme changes
+  */
   background: var(--m3-background);
   color: var(--m3-text);
   font-family: 'Google Sans', 'Roboto', 'Poppins', Arial, sans-serif;
@@ -54,55 +81,66 @@ body, html {
 }
 
 .app {
+  /*
+    The main app container uses flex to lay out the sidebar and content
+  */
   display: flex;
   min-height: 100vh;
   background: var(--m3-background);
 }
 
-/* SIDEBAR / NAVIGATION */
+/*
+  SIDEBAR / NAVIGATION
+  --------------------
+  The sidebar contains navigation links and the dark mode toggle.
+  It can expand/collapse (see .sidebar-expanded below).
+*/
 .sidebar {
-  width: 80px;
-  min-width: 80px;
+  width: 72px;
+  min-width: 72px;
+  max-width: 72px;
   background: var(--m3-sidebar-bg);
-  border-right: none;
-  padding: 32px 0 24px 0;
+  box-shadow: var(--m3-sidebar-shadow);
+  border-radius: 0 24px 24px 0;
+  padding: 20px 0 16px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 8px;
   height: 100vh;
-  min-height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 10;
-  box-shadow: var(--m3-elevation-1);
-  border-radius: 0 32px 32px 0;
-  transition: background 0.3s;
+  overflow: hidden;
 }
 
 .logo {
-  width: 44px;
-  height: 44px;
+  /*
+    The logo at the top of the sidebar
+    - Click to expand/collapse the sidebar
+  */
+  width: 36px;
+  height: 36px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  background: var(--m3-sidebar-active);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--m3-sidebar-icon);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 32px;
-  border-radius: 12px;
-  background: var(--m3-sidebar-active);
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--m3-sidebar-icon);
-  letter-spacing: 0.5px;
-  box-shadow: none;
-  background-clip: border-box;
 }
 
 .sidebar nav ul {
+  /*
+    Navigation list (vertical by default)
+  */
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 2px;
   width: 100%;
   align-items: center;
 }
@@ -114,40 +152,57 @@ body, html {
 }
 
 .sidebar nav ul li a {
+  /*
+    Each navigation link
+    - Shows icon and (when expanded) text
+    - Subtle hover and active states
+  */
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.4em;
   color: var(--m3-sidebar-icon);
   font-weight: 500;
-  font-size: 0.98rem;
-  border-radius: 14px;
-  padding: 0 12px;
-  height: 40px;
-  min-width: 40px;
-  width: auto;
+  font-size: 0.875rem; /* 14px */
+  border-radius: 18px;
+  padding: 0 6px;
+  height: 32px;
+  min-width: 32px;
+  width: 56px;
   transition: background 0.2s, color 0.2s, transform 0.18s cubic-bezier(.4,0,.2,1);
   margin: 0 auto;
   text-align: left;
   white-space: nowrap;
+  justify-content: flex-start;
 }
 
 .sidebar nav ul li a .material-symbols-rounded {
-  font-size: 1.25rem;
+  /*
+    The icon for each nav item
+  */
+  font-size: 1.25rem; /* 20px */
   margin-bottom: 0;
   display: block;
 }
 
 .sidebar nav ul li a span:not(.material-symbols-rounded) {
-  font-size: 0.93rem;
+  /*
+    The text for each nav item (hidden in collapsed mode)
+  */
+  font-size: 0.875rem; /* 14px */
   font-weight: 500;
   color: var(--m3-sidebar-icon);
   letter-spacing: 0.01em;
+  display: inline-block;
 }
 
 .sidebar nav ul li a.active, .sidebar nav ul li a:hover {
+  /*
+    Highlight the active or hovered nav item
+  */
   background: var(--m3-sidebar-active);
   color: var(--m3-primary);
-  transform: scale(1.04);
+  box-shadow: none;
+  transform: none;
 }
 
 .sidebar nav ul li a.active .material-symbols-rounded,
@@ -158,39 +213,53 @@ body, html {
 }
 
 .sidebar .sidebar-actions {
+  /*
+    Container for the dark mode toggle button at the bottom
+  */
   margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 0;
   align-items: center;
+  width: 100%;
+  padding-bottom: 8px;
 }
 
 .sidebar .sidebar-action-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
+  /*
+    The dark mode toggle button
+    - Small, circular, minimal
+  */
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.25rem;
   border: none;
-  background: var(--m3-primary);
-  color: #fff;
+  background: var(--m3-sidebar-active);
+  color: var(--m3-sidebar-icon);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, border 0.2s;
-  box-shadow: 0 2px 8px #6750a41a;
+  box-shadow: none;
   margin-bottom: 0;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
 }
 
 .sidebar .sidebar-action-btn:hover {
-  background: var(--m3-secondary);
-  color: #fff;
+  background: var(--m3-surface-variant);
+  color: var(--m3-primary);
+  box-shadow: 0 2px 8px #6750a41a;
 }
 
-/* CONTENT */
+/*
+  CONTENT AREA
+  ------------
+  The main content area is shifted right to make space for the sidebar.
+*/
 .content {
   flex: 1;
-  margin-left: 80px;
+  margin-left: 72px;
   background: var(--m3-background);
   padding: 56px 56px 40px 56px;
   overflow-y: auto;
@@ -201,6 +270,9 @@ body, html {
 }
 
 h1 {
+  /*
+    Main heading style (hero section)
+  */
   font-size: 3.2rem;
   font-weight: 800;
   margin-bottom: 18px;
@@ -213,6 +285,9 @@ h1 {
 }
 
 h2, .about-section-title, .main-section-title {
+  /*
+    Section headings
+  */
   font-size: 1.7rem;
   margin: 40px 0 18px;
   color: var(--m3-secondary);
@@ -220,11 +295,17 @@ h2, .about-section-title, .main-section-title {
 }
 
 .hero p, .about-card p, .main-card p {
+  /*
+    Paragraphs in hero/about/main cards
+  */
   color: var(--m3-muted);
   font-size: 1.18rem;
 }
 
 .main-card, .about-card {
+  /*
+    Material 3 card style for main/about sections
+  */
   background: var(--m3-surface);
   border-radius: 24px;
   box-shadow: var(--m3-elevation-1);
@@ -251,6 +332,9 @@ h2, .about-section-title, .main-section-title {
 }
 
 .album-grid {
+  /*
+    Grid for project cards
+  */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 32px;
@@ -258,6 +342,9 @@ h2, .about-section-title, .main-section-title {
 }
 
 .album-card {
+  /*
+    Each project card
+  */
   background: var(--m3-surface);
   border-radius: 20px;
   box-shadow: var(--m3-elevation-1);
@@ -268,6 +355,9 @@ h2, .about-section-title, .main-section-title {
 }
 
 .album-card:hover {
+  /*
+    Project card hover effect
+  */
   transform: translateY(-4px) scale(1.04);
   box-shadow: var(--m3-elevation-2);
 }
@@ -305,26 +395,105 @@ footer {
   padding-bottom: 16px;
 }
 
+/*
+  Responsive design for tablets and mobile
+  ---------------------------------------
+  The sidebar moves to the top and the layout stacks vertically.
+*/
 @media (max-width: 900px) {
   .sidebar {
     position: static;
     width: 100vw;
     min-width: unset;
+    max-width: unset;
     height: auto;
     min-height: unset;
     flex-direction: row;
-    border-radius: 0 0 32px 32px;
+    border-radius: 0 0 24px 24px;
     box-shadow: none;
-    padding: 12px 0 12px 0;
+    padding: 8px 0 8px 0;
     gap: 0;
     justify-content: space-between;
+    overflow: visible;
   }
-  .app {
-    flex-direction: column;
+  .sidebar nav ul {
+    flex-direction: row;
+    gap: 2px;
   }
-  .content {
-    margin-left: 0;
-    padding: 32px 12px 24px 12px;
+  .sidebar .sidebar-actions {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/*
+  --- Sidebar Expanded State ---
+  When the sidebar is expanded, it becomes wider and shows nav text.
+*/
+.sidebar.sidebar-expanded {
+  width: 220px;
+  min-width: 220px;
+  max-width: 220px;
+  box-shadow: var(--m3-sidebar-shadow);
+  transition: width 0.25s cubic-bezier(.4,0,.2,1);
+}
+.sidebar.sidebar-expanded .logo {
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  transition: width 0.25s, height 0.25s, font-size 0.25s;
+}
+.sidebar.sidebar-expanded nav ul {
+  align-items: flex-start;
+}
+.sidebar.sidebar-expanded nav ul li {
+  justify-content: flex-start;
+}
+.sidebar.sidebar-expanded nav ul li a {
+  width: 180px;
+  min-width: 120px;
+  font-size: 1.08rem;
+  height: 44px;
+  border-radius: 22px;
+  padding: 0 18px;
+  gap: 1.1em;
+  transition: width 0.25s, font-size 0.25s, height 0.25s, padding 0.25s;
+}
+.sidebar.sidebar-expanded nav ul li a .material-symbols-rounded {
+  font-size: 1.6rem;
+  transition: font-size 0.25s;
+}
+.sidebar.sidebar-expanded nav ul li a span:not(.material-symbols-rounded) {
+  font-size: 1.08rem;
+  opacity: 1;
+  transition: opacity 0.25s, font-size 0.25s;
+}
+/* Hide text in collapsed state */
+.sidebar nav ul li a span:not(.material-symbols-rounded) {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.18s, width 0.18s;
+}
+.sidebar.sidebar-expanded nav ul li a span:not(.material-symbols-rounded) {
+  opacity: 1;
+  width: auto;
+  margin-left: 8px;
+}
+/* Animate logo button on expand */
+.logo {
+  transition: background 0.18s, box-shadow 0.18s, width 0.25s, height 0.25s, font-size 0.25s, transform 0.25s;
+}
+.sidebar.sidebar-expanded .logo {
+  background: var(--m3-sidebar-active);
+  transform: rotate(90deg) scale(1.08);
+}
+@media (max-width: 900px) {
+  .sidebar.sidebar-expanded {
+    width: 100vw;
+    min-width: unset;
+    max-width: unset;
   }
 }
 
@@ -361,7 +530,11 @@ footer {
   }
 }
 
-/* Material 3 expressive interactive states */
+/*
+  Material 3 expressive interactive states
+  ---------------------------------------
+  These rules add smooth transitions and focus/hover effects to cards and buttons.
+*/
 .sidebar nav ul li a,
 .album-card,
 .about-card,
