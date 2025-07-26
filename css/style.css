@@ -7,7 +7,7 @@
   --m3-on-primary: #fff;
   --m3-secondary: #625b71;
   --m3-on-secondary: #fff;
-  --m3-background: #f5f5fa;
+  --m3-background: #f8fafd;
   --m3-surface: #fff;
   --m3-surface-variant: #e7e0ec;
   --m3-outline: #79747e;
@@ -16,6 +16,8 @@
   --m3-text: #1c1b1f;
   --m3-muted: #49454f;
   --m3-accent: #00bfae;
+  --m3-elevation-1: 0 1.5px 6px #6750a41a;
+  --m3-elevation-2: 0 6px 24px #6750a433, 0 1.5px 6px #6750a41a;
 }
 
 * {
@@ -25,10 +27,12 @@
 }
 
 body, html {
-  height: 100%;
-  font-family: 'Poppins', 'Roboto', 'Arial', sans-serif;
-  background-color: var(--m3-background);
+  background: var(--m3-background);
   color: var(--m3-text);
+  font-family: 'Roboto', 'Poppins', Arial, sans-serif;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
+  min-height: 100vh;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -63,10 +67,11 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 10;
+  box-shadow: var(--m3-elevation-1);
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: var(--m3-primary);
   letter-spacing: 0.5px;
@@ -86,13 +91,14 @@ a:hover {
   font-size: 1.1rem;
   border-radius: 8px;
   padding: 8px 12px;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s, transform 0.18s cubic-bezier(.4,0,.2,1);
   display: block;
 }
 
 .sidebar nav ul li a:hover, .sidebar nav ul li a.active {
   background: var(--m3-surface-variant);
   color: var(--m3-primary);
+  transform: translateY(-1px) scale(1.04);
 }
 
 /* CONTENT */
@@ -102,6 +108,9 @@ a:hover {
   padding: 48px 48px 32px 48px;
   overflow-y: auto;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -112,17 +121,33 @@ h1 {
   letter-spacing: -1px;
 }
 
-h2 {
+h2, .about-section-title, .main-section-title {
   font-size: 1.5rem;
   margin: 40px 0 18px;
   color: var(--m3-secondary);
   font-weight: 600;
 }
 
-.hero p {
+.hero p, .about-card p, .main-card p {
   color: var(--m3-muted);
-  font-size: 1.15rem;
-  margin-bottom: 16px;
+}
+
+.about-card, .main-card {
+  background: var(--m3-surface);
+  border-radius: 18px;
+  box-shadow: var(--m3-elevation-1);
+  padding: 32px 24px 24px 24px;
+  margin-bottom: 32px;
+  border: 1px solid var(--m3-surface-variant);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: box-shadow 0.22s cubic-bezier(.4,0,.2,1), transform 0.18s cubic-bezier(.4,0,.2,1);
+}
+
+.about-card:hover, .main-card:hover {
+  box-shadow: var(--m3-elevation-2);
+  transform: translateY(-2px) scale(1.025);
 }
 
 .album-grid {
@@ -135,11 +160,16 @@ h2 {
 .album-card {
   background: var(--m3-surface);
   border-radius: 16px;
-  box-shadow: 0 2px 8px #6750a41a;
+  box-shadow: var(--m3-elevation-1);
   padding: 18px 14px 14px 14px;
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s;
   border: 1px solid var(--m3-surface-variant);
+}
+
+.album-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: var(--m3-elevation-2);
 }
 
 .album-card img {
@@ -155,11 +185,6 @@ h2 {
   font-size: 1.08rem;
 }
 
-.album-card:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 4px 16px #6750a433;
-}
-
 footer {
   margin-top: 48px;
   color: var(--m3-muted);
@@ -168,46 +193,6 @@ footer {
   padding-bottom: 12px;
 }
 
-/* Material 3 expressive card and section styles for all pages */
-.about-card, .main-card {
-  background: var(--m3-surface);
-  border-radius: 18px;
-  box-shadow: 0 2px 12px #6750a41a;
-  padding: 32px 24px 24px 24px;
-  margin-bottom: 32px;
-  border: 1px solid var(--m3-surface-variant);
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.about-card ul, .main-card ul {
-  margin: 0 0 0 18px;
-  padding: 0;
-}
-
-.about-card li, .main-card li {
-  margin-bottom: 6px;
-  font-size: 1.08rem;
-}
-
-.about-section-title, .main-section-title {
-  color: var(--m3-secondary);
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 32px 0 12px 0;
-}
-
-@media (max-width: 600px) {
-  .about-card, .main-card {
-    padding: 18px 8px 16px 8px;
-  }
-  .about-section-title, .main-section-title {
-    font-size: 1rem;
-  }
-}
-
-/* Responsive Design */
 @media (max-width: 900px) {
   .app {
     flex-direction: column;
@@ -222,6 +207,7 @@ footer {
     border-right: none;
     border-bottom: 1px solid var(--m3-surface-variant);
     position: static;
+    box-shadow: none;
   }
   .logo {
     margin-bottom: 0;
@@ -256,12 +242,15 @@ footer {
   h1 {
     font-size: 2rem;
   }
-  h2 {
+  h2, .about-section-title, .main-section-title {
     font-size: 1.1rem;
   }
   .album-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+  .about-card, .main-card {
+    padding: 18px 8px 16px 8px;
   }
 }
 

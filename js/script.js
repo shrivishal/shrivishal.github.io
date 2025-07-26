@@ -1,3 +1,3 @@
 // Material 3 Expressive Portfolio
-// No Spotify theme, only clean Material 3 expressive UI
+// All interactive and visual logic handled by CSS for motion and color
 console.log("Material 3 Expressive portfolio loaded!");
