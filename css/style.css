@@ -70,8 +70,10 @@ body, html {
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  height: 100vh;
   min-height: 100vh;
-  position: sticky;
+  position: fixed;
+  left: 0;
   top: 0;
   z-index: 10;
   box-shadow: var(--m3-elevation-1);
@@ -80,15 +82,15 @@ body, html {
 }
 
 .logo {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 32px;
-  border-radius: 16px;
+  border-radius: 12px;
   background: var(--m3-sidebar-active);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--m3-sidebar-icon);
   letter-spacing: 0.5px;
@@ -117,7 +119,7 @@ body, html {
   gap: 10px;
   color: var(--m3-sidebar-icon);
   font-weight: 500;
-  font-size: 1.01rem;
+  font-size: 0.98rem;
   border-radius: 14px;
   padding: 0 12px;
   height: 40px;
@@ -130,13 +132,13 @@ body, html {
 }
 
 .sidebar nav ul li a .material-symbols-rounded {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 0;
   display: block;
 }
 
 .sidebar nav ul li a span:not(.material-symbols-rounded) {
-  font-size: 0.98rem;
+  font-size: 0.93rem;
   font-weight: 500;
   color: var(--m3-sidebar-icon);
   letter-spacing: 0.01em;
@@ -164,16 +166,16 @@ body, html {
 }
 
 .sidebar .sidebar-action-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   border: none;
   background: var(--m3-primary);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border 0.2s;
   box-shadow: 0 2px 8px #6750a41a;
@@ -188,6 +190,7 @@ body, html {
 /* CONTENT */
 .content {
   flex: 1;
+  margin-left: 80px;
   background: var(--m3-background);
   padding: 56px 56px 40px 56px;
   overflow-y: auto;
@@ -303,29 +306,24 @@ footer {
 }
 
 @media (max-width: 900px) {
+  .sidebar {
+    position: static;
+    width: 100vw;
+    min-width: unset;
+    height: auto;
+    min-height: unset;
+    flex-direction: row;
+    border-radius: 0 0 32px 32px;
+    box-shadow: none;
+    padding: 12px 0 12px 0;
+    gap: 0;
+    justify-content: space-between;
+  }
   .app {
     flex-direction: column;
   }
-  .sidebar {
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 16px;
-    min-height: unset;
-    border-right: none;
-    border-bottom: 1px solid var(--m3-surface-variant);
-    position: static;
-    box-shadow: none;
-  }
-  .logo {
-    margin-bottom: 0;
-  }
-  .sidebar nav ul {
-    flex-direction: row;
-    gap: 16px;
-  }
   .content {
+    margin-left: 0;
     padding: 32px 12px 24px 12px;
   }
 }
