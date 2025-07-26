@@ -4,21 +4,20 @@
 */
 :root {
   --m3-primary: #6750a4;
-  --m3-on-primary: #fff;
-  --m3-secondary: #625b71;
-  --m3-on-secondary: #fff;
+  --m3-secondary: #dc362e;
+  --m3-tertiary: #ffb300;
   --m3-background: #f8fafd;
   --m3-surface: #fff;
-  --m3-surface-variant: #e7e0ec;
+  --m3-surface-variant: #f3edf7;
   --m3-outline: #79747e;
-  --m3-error: #b3261e;
-  --m3-on-error: #fff;
   --m3-text: #1c1b1f;
   --m3-muted: #49454f;
-  --m3-accent: #00bfae;
+  --m3-gradient: linear-gradient(90deg, #e3ddfa 0%, #ffe6e1 100%);
   --m3-elevation-1: 0 1.5px 6px #6750a41a;
   --m3-elevation-2: 0 6px 24px #6750a433, 0 1.5px 6px #6750a41a;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap');
 
 * {
   margin: 0;
@@ -29,23 +28,11 @@
 body, html {
   background: var(--m3-background);
   color: var(--m3-text);
-  font-family: 'Roboto', 'Poppins', Arial, sans-serif;
-  font-size: 1.08rem;
+  font-family: 'Google Sans', 'Roboto', 'Poppins', Arial, sans-serif;
+  font-size: 1.12rem;
   letter-spacing: 0.01em;
   min-height: 100vh;
   transition: background 0.3s, color 0.3s;
-}
-
-a {
-  color: var(--m3-primary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: var(--m3-accent);
 }
 
 .app {
@@ -59,7 +46,7 @@ a:hover {
   width: 260px;
   background: var(--m3-surface);
   border-right: 1px solid var(--m3-surface-variant);
-  padding: 32px 24px;
+  padding: 40px 28px 32px 28px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -71,26 +58,30 @@ a:hover {
 }
 
 .logo {
-  font-size: 2.1rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 800;
   color: var(--m3-primary);
   letter-spacing: 0.5px;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
+  background: var(--m3-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .sidebar nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
 }
 
 .sidebar nav ul li a {
   color: var(--m3-muted);
   font-weight: 500;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  padding: 8px 12px;
+  font-size: 1.15rem;
+  border-radius: 10px;
+  padding: 10px 16px;
   transition: background 0.2s, color 0.2s, transform 0.18s cubic-bezier(.4,0,.2,1);
   display: block;
 }
@@ -105,7 +96,7 @@ a:hover {
 .content {
   flex: 1;
   background: var(--m3-background);
-  padding: 48px 48px 32px 48px;
+  padding: 56px 56px 40px 56px;
   overflow-y: auto;
   min-width: 0;
   display: flex;
@@ -114,83 +105,108 @@ a:hover {
 }
 
 h1 {
-  font-size: 2.7rem;
-  font-weight: 700;
-  margin-bottom: 12px;
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 18px;
   color: var(--m3-primary);
   letter-spacing: -1px;
+  background: var(--m3-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 h2, .about-section-title, .main-section-title {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin: 40px 0 18px;
   color: var(--m3-secondary);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .hero p, .about-card p, .main-card p {
   color: var(--m3-muted);
+  font-size: 1.18rem;
 }
 
-.about-card, .main-card {
+.main-card, .about-card {
   background: var(--m3-surface);
-  border-radius: 18px;
+  border-radius: 24px;
   box-shadow: var(--m3-elevation-1);
-  padding: 32px 24px 24px 24px;
-  margin-bottom: 32px;
+  padding: 48px 40px 36px 40px;
+  margin-bottom: 40px;
   border: 1px solid var(--m3-surface-variant);
-  max-width: 900px;
+  max-width: 950px;
   margin-left: auto;
   margin-right: auto;
   transition: box-shadow 0.22s cubic-bezier(.4,0,.2,1), transform 0.18s cubic-bezier(.4,0,.2,1);
 }
 
-.about-card:hover, .main-card:hover {
-  box-shadow: var(--m3-elevation-2);
-  transform: translateY(-2px) scale(1.025);
+.main-card {
+  background: var(--m3-gradient);
+}
+
+.main-card section, .about-card section {
+  background: var(--m3-surface);
+  border-radius: 18px;
+  box-shadow: none;
+  padding: 32px 24px 24px 24px;
+  margin-bottom: 32px;
+  border: 1px solid var(--m3-surface-variant);
 }
 
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 28px;
-  margin-top: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 32px;
+  margin-top: 18px;
 }
 
 .album-card {
   background: var(--m3-surface);
-  border-radius: 16px;
+  border-radius: 20px;
   box-shadow: var(--m3-elevation-1);
-  padding: 18px 14px 14px 14px;
+  padding: 22px 16px 18px 16px;
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s;
   border: 1px solid var(--m3-surface-variant);
 }
 
 .album-card:hover {
-  transform: translateY(-4px) scale(1.03);
+  transform: translateY(-4px) scale(1.04);
   box-shadow: var(--m3-elevation-2);
 }
 
 .album-card img {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 14px;
+  border-radius: 16px;
+  margin-bottom: 16px;
   box-shadow: 0 1px 4px #0001;
 }
 
 .album-card p {
   color: var(--m3-text);
   font-weight: 500;
-  font-size: 1.08rem;
+  font-size: 1.13rem;
+}
+
+a {
+  color: var(--m3-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--m3-secondary);
 }
 
 footer {
-  margin-top: 48px;
+  margin-top: 56px;
   color: var(--m3-muted);
-  font-size: 1rem;
+  font-size: 1.08rem;
   text-align: center;
-  padding-bottom: 12px;
+  padding-bottom: 16px;
 }
 
 @media (max-width: 900px) {
@@ -240,14 +256,14 @@ footer {
     padding: 18px 4vw 12px 4vw;
   }
   h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
   h2, .about-section-title, .main-section-title {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
   .album-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 18px;
   }
   .about-card, .main-card {
     padding: 18px 8px 16px 8px;
