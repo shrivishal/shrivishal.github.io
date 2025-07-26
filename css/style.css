@@ -659,3 +659,43 @@ button:focus-visible, input[type="button"]:focus-visible, input[type="submit"]:f
   outline: 2px solid var(--m3-primary);
   outline-offset: 2px;
 }
+
+.sidebar-action-favicon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  background: none;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.sidebar-action-favicon::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url('../images/favicon.svg') center/cover no-repeat;
+  border-radius: 50%;
+  box-shadow: 0 1.5px 6px #6750a41a;
+}
+.sidebar.sidebar-expanded .sidebar-action-favicon {
+  margin-right: 8px;
+}
+.sidebar .sidebar-action-btn .material-symbols-rounded {
+  display: none !important;
+}
+
+.project-list {
+  margin: 24px 0 0 0;
+  padding-left: 24px;
+  font-size: 1.18rem;
+  color: var(--m3-text);
+  line-height: 1.7;
+  font-weight: 500;
+}
+.project-list li {
+  margin-bottom: 10px;
+  list-style: disc inside;
+  opacity: 0.85;
+}
