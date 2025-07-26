@@ -4,22 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Vishal Shrivastava</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Material+Symbols+Rounded&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="app">
     <!-- SIDEBAR -->
     <aside class="sidebar">
-      <div class="logo">Vishal S.</div>
+      <div class="logo"><span class="material-symbols-rounded">apps</span></div>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html"><span class="material-symbols-rounded">home</span><span class="sr-only">Home</span></a></li>
+          <li><a href="about.html" class="active"><span class="material-symbols-rounded">person</span><span class="sr-only">About</span></a></li>
+          <li><a href="index.html#projects"><span class="material-symbols-rounded">library_books</span><span class="sr-only">Projects</span></a></li>
+          <li><a href="index.html#contact"><span class="material-symbols-rounded">mail</span><span class="sr-only">Contact</span></a></li>
         </ul>
       </nav>
+      <div class="sidebar-actions">
+        <button class="sidebar-action-btn" id="theme-toggle" title="Toggle dark mode"><span class="material-symbols-rounded">dark_mode</span></button>
+      </div>
     </aside>
     <!-- MAIN CONTENT -->
     <main class="content">
@@ -52,5 +55,6 @@
       </footer>
     </main>
   </div>
+  <script src="js/script.js"></script>
 </body>
 </html>
