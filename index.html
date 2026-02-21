@@ -1,89 +1,425 @@
-<!--
-  Vishal Shrivastava | Portfolio
-  This is the main HTML file for the Material 3 Expressive portfolio website.
-  It uses a sidebar for navigation, a dark mode toggle, and a clean, modern Material 3 look.
-  All structure and layout is defined here. See style.css for design and script.js for interactivity.
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    The <head> contains meta info, fonts, and links to CSS.
-    - Google Sans and Material Symbols are loaded from Google Fonts.
-    - style.css contains all the design rules.
-  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vishal Shrivastava | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Material+Symbols+Rounded&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Special+Elite&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="stylesheet" href="assets/styles/style.css" />
 </head>
 <body>
-  <div class="app">
-    <!--
-      SIDEBAR: Contains navigation links and the dark mode toggle.
-      - The logo at the top can expand/collapse the sidebar.
-      - Navigation uses Material icons and text.
-      - The dark mode button is at the bottom.
-    -->
-    <aside class="sidebar">
-      <div class="logo" tabindex="0" aria-label="Expand/collapse sidebar"><span class="material-symbols-rounded">apps</span></div>
-      <nav>
-        <ul>
-          <li><a href="#home" class="active"><span class="material-symbols-rounded">home</span><span>Home</span></a></li>
-          <li><a href="about.html"><span class="material-symbols-rounded">person</span><span>About</span></a></li>
-          <li><a href="#projects"><span class="material-symbols-rounded">library_books</span><span>Projects</span></a></li>
-          <li><a href="#contact"><span class="material-symbols-rounded">mail</span><span>Contact</span></a></li>
-        </ul>
-      </nav>
-      <div class="sidebar-actions">
-        <button class="sidebar-action-btn" id="theme-toggle" title="Toggle dark mode">
-          <span class="material-symbols-rounded">dark_mode</span>
-          <span class="sidebar-action-label">Theme</span>
-        </button>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">VS<span class="nav-logo-dot">.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content reveal">
+      <div class="hero-burst">POW!</div>
+      <div class="hero-eyebrow">✦ INTRODUCING ✦</div>
+      <h1 class="hero-name">VISHAL<br><span>SHRIVASTAVA</span></h1>
+      <div class="hero-role-badge">⚡ Full Stack Developer ⚡</div>
+      <p class="hero-tagline">Crafting expressive digital experiences<br>with a passion for code &amp; creativity</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Work ↓</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
       </div>
-      <img src="assets/images/favicon.svg" alt="Website icon" class="sidebar-favicon" />
-    </aside>
-    <!--
-      MAIN CONTENT: The main area of the site.
-      - Contains hero, about, projects, and contact sections.
-      - Each section is styled as a Material card.
-    -->
-    <main class="content">
-      <div class="main-card">
-        <section class="hero" id="home">
-          <h1>Hi, I'm Vishal Shrivastava</h1>
-          <p>Crafting expressive digital experiences with a focus on clarity, accessibility, and modern design.</p>
-        </section>
-        <section id="about">
-          <h2>About Me</h2>
-          <p>I'm a full-stack developer passionate about building beautiful, accessible, and performant web applications. I love exploring new UI paradigms and bringing ideas to life with code.</p>
-        </section>
-        <section id="projects">
-          <h2>Featured Projects</h2>
-          <ul class="project-list">
-            <li>Echo UI – Real-time audio visualizer (coming soon)</li>
-            <li>VisualGroove – Interactive music dashboard (coming soon)</li>
-            <li>More projects launching soon...</li>
-          </ul>
-        </section>
-        <section id="contact">
-          <h2>Contact</h2>
-          <p>📧 <a href="mailto:vishalshrivastava@email.com">vishalshrivastava@email.com</a></p>
-        </section>
+    </div>
+    <div class="hero-deco" aria-hidden="true">
+      <div class="deco-star deco-star-1">★</div>
+      <div class="deco-star deco-star-2">✦</div>
+      <div class="deco-star deco-star-3">★</div>
+      <div class="deco-action deco-action-1">WHAM!</div>
+      <div class="deco-action deco-action-2">ZAP!</div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-label reveal">// ORIGIN STORY</div>
+      <h2 class="section-title reveal">ABOUT ME</h2>
+      <div class="about-grid">
+        <div class="about-photo-wrap reveal">
+          <div class="about-photo-frame comic-panel">
+            <div class="photo-placeholder">
+              <span class="photo-initials">VS</span>
+              <div class="photo-caption">[ Photo Here ]</div>
+            </div>
+          </div>
+          <div class="burst-badge" aria-hidden="true">HERO!</div>
+        </div>
+        <div class="about-bio-wrap">
+          <div class="speech-bubble comic-panel reveal">
+            <p class="speech-text">
+              Hello, World! I'm <strong>Vishal Shrivastava</strong> — a passionate full-stack developer who loves building beautiful, performant web experiences. With expertise in modern JavaScript frameworks and a keen eye for design, I turn complex problems into elegant solutions.
+            </p>
+          </div>
+          <p class="about-detail reveal">📍 [City, India] &nbsp;·&nbsp; Available for work</p>
+          <div class="about-stats-grid">
+            <div class="stat-panel comic-panel reveal">
+              <div class="stat-number">5+</div>
+              <div class="stat-label">Years Exp.</div>
+            </div>
+            <div class="stat-panel comic-panel reveal">
+              <div class="stat-number">20+</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-panel comic-panel reveal">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Clients</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <footer>
-        <p>© 2025 Vishal Shrivastava. Designed with Material 3 Expressive.</p>
-      </footer>
-    </main>
-  </div>
-  <!--
-    script.js adds interactivity:
-    - Dark mode toggle
-    - Sidebar expand/collapse
-    - See script.js for details
-  -->
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-label reveal">// POWER ARSENAL</div>
+      <h2 class="section-title reveal">SKILLS</h2>
+      <div class="skills-grid">
+        <div class="skills-category comic-panel reveal">
+          <div class="skills-cat-header">⚡ Frontend</div>
+          <div class="skills-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="skills-category comic-panel reveal">
+          <div class="skills-cat-header">🔥 Backend</div>
+          <div class="skills-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">GraphQL</span>
+          </div>
+        </div>
+        <div class="skills-category comic-panel reveal">
+          <div class="skills-cat-header">💾 Database</div>
+          <div class="skills-tags">
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Firebase</span>
+            <span class="skill-tag">Redis</span>
+          </div>
+        </div>
+        <div class="skills-category comic-panel reveal">
+          <div class="skills-cat-header">🛠 Tools</div>
+          <div class="skills-tags">
+            <span class="skill-tag">Git &amp; GitHub</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Netlify</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-label reveal">// FEATURED MISSIONS</div>
+      <h2 class="section-title reveal">PROJECTS</h2>
+      <div class="projects-grid">
+
+        <article class="project-panel comic-panel reveal">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #7B1F1F 0%, #1F1456 100%)">PROJECT 01</div>
+            <div class="project-tag-badge">Web App</div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Echo UI</h3>
+            <p class="project-desc">Real-time audio visualizer with dynamic waveform rendering and beat detection. Built for music lovers and audio engineers.</p>
+            <div class="project-tech">
+              <span>React</span><span>Web Audio API</span><span>Canvas</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-panel comic-panel reveal">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #006B5E 0%, #1F1456 100%)">PROJECT 02</div>
+            <div class="project-tag-badge">Dashboard</div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">VisualGroove</h3>
+            <p class="project-desc">Interactive music dashboard integrating Spotify API with real-time data visualization, playlist analytics, and social features.</p>
+            <div class="project-tech">
+              <span>Next.js</span><span>Spotify API</span><span>D3.js</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-panel comic-panel reveal">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #C9900C 0%, #7B1F1F 100%)">PROJECT 03</div>
+            <div class="project-tag-badge">E-Commerce</div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">ShopKart Pro</h3>
+            <p class="project-desc">Full-featured e-commerce platform with inventory management, payment gateway integration, and real-time order tracking.</p>
+            <div class="project-tech">
+              <span>Node.js</span><span>MongoDB</span><span>Stripe</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-panel comic-panel reveal">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1F1456 0%, #006B5E 100%)">PROJECT 04</div>
+            <div class="project-tag-badge">Mobile</div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">TaskFlow</h3>
+            <p class="project-desc">Cross-platform productivity app with drag-and-drop kanban boards, team collaboration, and smart deadline reminders.</p>
+            <div class="project-tech">
+              <span>React Native</span><span>Firebase</span><span>Redux</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-panel comic-panel reveal">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #7B1F1F 0%, #C9900C 100%)">PROJECT 05</div>
+            <div class="project-tag-badge">AI Tool</div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">DevMind AI</h3>
+            <p class="project-desc">AI-powered code reviewer and bug detector that analyzes GitHub repositories and suggests optimizations using LLM integration.</p>
+            <div class="project-tech">
+              <span>Python</span><span>OpenAI</span><span>FastAPI</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
+              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-panel comic-panel reveal">
+          <div class="project-img-wrap">
+            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1F1456 0%, #7B1F1F 100%)">PROJECT 06</div>
+            <div class="project-tag-badge">Open Source</div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">UIStorm</h3>
+            <p class="project-desc">Open-source React component library with 50+ accessible components, custom theming, and comprehensive Storybook documentation.</p>
+            <div class="project-tech">
+              <span>React</span><span>TypeScript</span><span>Storybook</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn btn-sm btn-primary">Docs</a>
+              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <div class="section-label reveal">// BATTLE HISTORY</div>
+      <h2 class="section-title reveal">EXPERIENCE</h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-panel comic-panel">
+            <div class="timeline-header">
+              <h3 class="timeline-role">Senior Full Stack Developer</h3>
+              <span class="timeline-date">2022 — Present</span>
+            </div>
+            <div class="timeline-company">Tech Corp India Pvt. Ltd. · Bangalore</div>
+            <ul class="timeline-bullets">
+              <li>Led development of microservices architecture serving 100K+ daily users</li>
+              <li>Reduced page load times by 60% through advanced optimization strategies</li>
+              <li>Mentored and grew a team of 5 junior developers</li>
+            </ul>
+            <div class="timeline-stack">
+              <span>React</span><span>Node.js</span><span>AWS</span><span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-panel comic-panel">
+            <div class="timeline-header">
+              <h3 class="timeline-role">Full Stack Developer</h3>
+              <span class="timeline-date">2020 — 2022</span>
+            </div>
+            <div class="timeline-company">Startup Studio · Bangalore</div>
+            <ul class="timeline-bullets">
+              <li>Built 3 SaaS products from scratch in a fast-paced startup environment</li>
+              <li>Implemented payment gateway handling 10K+ monthly transactions</li>
+              <li>Collaborated with design and product to ship features every sprint</li>
+            </ul>
+            <div class="timeline-stack">
+              <span>Next.js</span><span>MongoDB</span><span>Stripe</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-panel comic-panel">
+            <div class="timeline-header">
+              <h3 class="timeline-role">Frontend Developer (Intern)</h3>
+              <span class="timeline-date">2019 — 2020</span>
+            </div>
+            <div class="timeline-company">Digital Agency · Mumbai</div>
+            <ul class="timeline-bullets">
+              <li>Developed responsive UI components for 10+ client websites</li>
+              <li>Integrated RESTful APIs and third-party services across projects</li>
+            </ul>
+            <div class="timeline-stack">
+              <span>React</span><span>CSS3</span><span>REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" class="section education-section">
+    <div class="container">
+      <div class="section-label reveal">// TRAINING GROUNDS</div>
+      <h2 class="section-title reveal">EDUCATION</h2>
+      <div class="edu-grid">
+        <div class="edu-card comic-panel reveal">
+          <div class="edu-icon">🎓</div>
+          <h3 class="edu-degree">B.Tech Computer Science</h3>
+          <div class="edu-school">XYZ University of Technology</div>
+          <div class="edu-year">2016 — 2020</div>
+          <div class="edu-grade">CGPA: 8.5 / 10</div>
+        </div>
+        <div class="edu-card comic-panel reveal">
+          <div class="edu-icon">📜</div>
+          <h3 class="edu-degree">Full Stack Web Dev</h3>
+          <div class="edu-school">The Odin Project / freeCodeCamp</div>
+          <div class="edu-year">2020</div>
+          <div class="edu-grade">Certification</div>
+        </div>
+        <div class="edu-card comic-panel reveal">
+          <div class="edu-icon">☁️</div>
+          <h3 class="edu-degree">AWS Cloud Practitioner</h3>
+          <div class="edu-school">Amazon Web Services</div>
+          <div class="edu-year">2022</div>
+          <div class="edu-grade">Certified</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-label reveal">// SEND A SIGNAL</div>
+      <h2 class="section-title reveal">CONTACT</h2>
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <div class="big-speech-bubble comic-panel">
+            <p class="contact-heading">Let's build something<br><strong>AMAZING</strong> together!</p>
+            <div class="contact-links">
+              <a href="mailto:vishal@example.com" class="contact-link">
+                <span class="contact-icon">✉</span> vishal@example.com
+              </a>
+              <a href="#" class="contact-link">
+                <span class="contact-icon">in</span> linkedin.com/in/shrivishal
+              </a>
+              <a href="#" class="contact-link">
+                <span class="contact-icon">gh</span> github.com/shrivishal
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form comic-panel" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input id="contact-name" type="text" placeholder="Your Name" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input id="contact-email" type="email" placeholder="your@email.com" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" placeholder="Tell me about your project..." class="form-input" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">Send Message ✦</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">VS<span>.</span></div>
+        <p class="footer-text">© 2025 Vishal Shrivastava · Made with ☕ &amp; Code in India 🇮🇳</p>
+        <div class="footer-links">
+          <a href="#hero">Top ↑</a>
+          <a href="#projects">Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="assets/scripts/script.js"></script>
 </body>
 </html>
