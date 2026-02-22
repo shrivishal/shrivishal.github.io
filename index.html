@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vishal Shrivastava | Portfolio</title>
+  <title>Vishal Shrivastava — Product Manager</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Special+Elite&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
   <link rel="stylesheet" href="assets/styles/style.css" />
 </head>
@@ -14,15 +14,15 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-logo">VS<span class="nav-logo-dot">.</span></a>
+      <a href="#hero" class="nav-logo">VS</a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#work">Work</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -30,63 +30,80 @@
 
   <!-- ===== HERO ===== -->
   <section id="hero" class="hero-section">
-    <div class="hero-content reveal">
-      <div class="hero-burst">POW!</div>
-      <div class="hero-eyebrow">✦ INTRODUCING ✦</div>
-      <h1 class="hero-name">VISHAL<br><span>SHRIVASTAVA</span></h1>
-      <div class="hero-role-badge">⚡ Full Stack Developer ⚡</div>
-      <p class="hero-tagline">Crafting expressive digital experiences<br>with a passion for code &amp; creativity</p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View Work ↓</a>
-        <a href="#contact" class="btn btn-outline">Contact Me</a>
+    <div class="hero-ambient hero-ambient-tl" aria-hidden="true"></div>
+    <div class="hero-ambient hero-ambient-br" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-grid">
+
+        <div class="hero-text reveal">
+          <div class="hero-eyebrow">Product Manager &nbsp;·&nbsp; Ex-Business Analyst</div>
+          <div class="gold-rule"></div>
+          <h1 class="hero-name">Vishal<br>Shrivastava</h1>
+          <p class="hero-bio">
+            Grounded in data. Oriented toward outcomes.<br>
+            Three years in analytics built the instincts —
+            now I build the product.
+          </p>
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-primary">View Work</a>
+            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-photo-col reveal">
+          <div class="hero-photo-frame">
+            <div class="hero-photo-placeholder">VS</div>
+            <div class="hero-photo-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="hero-photo-caption">
+            <span class="hero-stat-num">4+</span>
+            <span class="hero-stat-label">Years across analytics &amp; product</span>
+          </div>
+        </div>
+
       </div>
-    </div>
-    <div class="hero-deco" aria-hidden="true">
-      <div class="deco-star deco-star-1">★</div>
-      <div class="deco-star deco-star-2">✦</div>
-      <div class="deco-star deco-star-3">★</div>
-      <div class="deco-action deco-action-1">WHAM!</div>
-      <div class="deco-action deco-action-2">ZAP!</div>
     </div>
   </section>
 
   <!-- ===== ABOUT ===== -->
   <section id="about" class="section about-section">
     <div class="container">
-      <div class="section-label reveal">// ORIGIN STORY</div>
-      <h2 class="section-title reveal">ABOUT ME</h2>
+      <div class="section-kicker reveal">About</div>
+      <div class="gold-rule reveal"></div>
       <div class="about-grid">
-        <div class="about-photo-wrap reveal">
-          <div class="about-photo-frame comic-panel">
-            <div class="photo-placeholder">
-              <span class="photo-initials">VS</span>
-              <div class="photo-caption">[ Photo Here ]</div>
-            </div>
-          </div>
-          <div class="burst-badge" aria-hidden="true">HERO!</div>
+
+        <div class="about-text reveal">
+          <h2 class="section-title">From Data<br>to Product.</h2>
+          <p class="body-text">
+            I started as a Business Analyst — two years of SQL, stakeholder decks, and Excel models that nobody read. That time taught me something more valuable than any PM certification: how to find the signal in noise.
+          </p>
+          <p class="body-text">
+            Transitioning to Product felt less like a pivot and more like a natural conclusion. I had already been the person asking <em>"why does this metric look like this?"</em> — now I get to close the loop and determine what we build next.
+          </p>
+          <p class="body-text">
+            Currently building growth products in <strong>Bangalore, India</strong>. Open to product roles where rigour and creativity are both valued.
+          </p>
         </div>
-        <div class="about-bio-wrap">
-          <div class="speech-bubble comic-panel reveal">
-            <p class="speech-text">
-              Hello, World! I'm <strong>Vishal Shrivastava</strong> — a passionate full-stack developer who loves building beautiful, performant web experiences. With expertise in modern JavaScript frameworks and a keen eye for design, I turn complex problems into elegant solutions.
-            </p>
+
+        <div class="about-stats-col">
+          <div class="stat-card reveal">
+            <div class="stat-num">4+</div>
+            <div class="stat-label">Years Experience</div>
           </div>
-          <p class="about-detail reveal">📍 [City, India] &nbsp;·&nbsp; Available for work</p>
-          <div class="about-stats-grid">
-            <div class="stat-panel comic-panel reveal">
-              <div class="stat-number">5+</div>
-              <div class="stat-label">Years Exp.</div>
-            </div>
-            <div class="stat-panel comic-panel reveal">
-              <div class="stat-number">20+</div>
-              <div class="stat-label">Projects</div>
-            </div>
-            <div class="stat-panel comic-panel reveal">
-              <div class="stat-number">10+</div>
-              <div class="stat-label">Clients</div>
-            </div>
+          <div class="stat-card reveal">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Career Chapters</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-num">12+</div>
+            <div class="stat-label">Products Shipped</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Industries Covered</div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -94,167 +111,130 @@
   <!-- ===== SKILLS ===== -->
   <section id="skills" class="section skills-section">
     <div class="container">
-      <div class="section-label reveal">// POWER ARSENAL</div>
-      <h2 class="section-title reveal">SKILLS</h2>
-      <div class="skills-grid">
-        <div class="skills-category comic-panel reveal">
-          <div class="skills-cat-header">⚡ Frontend</div>
-          <div class="skills-tags">
-            <span class="skill-tag">HTML5</span>
-            <span class="skill-tag">CSS3</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">React.js</span>
-            <span class="skill-tag">Next.js</span>
-            <span class="skill-tag">Tailwind CSS</span>
+      <div class="section-kicker reveal">Capabilities</div>
+      <div class="gold-rule reveal"></div>
+      <h2 class="section-title reveal">A Rare<br>Combination.</h2>
+
+      <div class="skills-two-col">
+
+        <div class="skills-col reveal">
+          <div class="skills-col-label">Analytical Roots</div>
+          <div class="skills-list">
+            <div class="skill-row">
+              <span class="skill-name">SQL &amp; Data Querying</span>
+              <span class="skill-bar"><span data-width="92%"></span></span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">Excel &amp; Financial Modelling</span>
+              <span class="skill-bar"><span data-width="88%"></span></span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">Tableau · Looker · Power BI</span>
+              <span class="skill-bar"><span data-width="82%"></span></span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">Python (Pandas, NumPy)</span>
+              <span class="skill-bar"><span data-width="70%"></span></span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">Statistical Analysis &amp; A/B Testing</span>
+              <span class="skill-bar"><span data-width="85%"></span></span>
+            </div>
           </div>
         </div>
-        <div class="skills-category comic-panel reveal">
-          <div class="skills-cat-header">🔥 Backend</div>
-          <div class="skills-tags">
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Express</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">GraphQL</span>
+
+        <div class="skills-col reveal">
+          <div class="skills-col-label">Product Craft</div>
+          <div class="skills-list">
+            <div class="skill-row">
+              <span class="skill-name">Product Roadmapping</span>
+              <span class="skill-bar"><span data-width="90%"></span></span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">PRD &amp; Spec Writing</span>
+              <span class="skill-bar"><span data-width="88%"></span></span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">User Research &amp; Discovery</span>
+              <span class="skill-bar"><span data-width="80%"></span></span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">Stakeholder Management</span>
+              <span class="skill-bar"><span data-width="87%"></span></span>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">Agile · Scrum · OKRs</span>
+              <span class="skill-bar"><span data-width="85%"></span></span>
+            </div>
           </div>
         </div>
-        <div class="skills-category comic-panel reveal">
-          <div class="skills-cat-header">💾 Database</div>
-          <div class="skills-tags">
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">Firebase</span>
-            <span class="skill-tag">Redis</span>
-          </div>
-        </div>
-        <div class="skills-category comic-panel reveal">
-          <div class="skills-cat-header">🛠 Tools</div>
-          <div class="skills-tags">
-            <span class="skill-tag">Git &amp; GitHub</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Figma</span>
-            <span class="skill-tag">AWS</span>
-            <span class="skill-tag">Netlify</span>
-          </div>
+
+      </div>
+
+      <div class="tools-row reveal">
+        <div class="tools-label">Tools</div>
+        <div class="tools-list">
+          <span class="tool-tag">Jira</span>
+          <span class="tool-tag">Confluence</span>
+          <span class="tool-tag">Figma</span>
+          <span class="tool-tag">Notion</span>
+          <span class="tool-tag">Google Analytics</span>
+          <span class="tool-tag">Mixpanel</span>
+          <span class="tool-tag">Amplitude</span>
+          <span class="tool-tag">Miro</span>
+          <span class="tool-tag">Segment</span>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="section projects-section">
+  <!-- ===== WORK ===== -->
+  <section id="work" class="section work-section">
     <div class="container">
-      <div class="section-label reveal">// FEATURED MISSIONS</div>
-      <h2 class="section-title reveal">PROJECTS</h2>
-      <div class="projects-grid">
+      <div class="section-kicker reveal">Selected Work</div>
+      <div class="gold-rule reveal"></div>
+      <h2 class="section-title reveal">Case Studies.</h2>
 
-        <article class="project-panel comic-panel reveal">
-          <div class="project-img-wrap">
-            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #7B1F1F 0%, #1F1456 100%)">PROJECT 01</div>
-            <div class="project-tag-badge">Web App</div>
+      <div class="work-grid">
+
+        <article class="work-card reveal">
+          <div class="work-card-top">
+            <span class="work-tag">Product · Growth</span>
+            <span class="work-year">2023</span>
           </div>
-          <div class="project-content">
-            <h3 class="project-title">Echo UI</h3>
-            <p class="project-desc">Real-time audio visualizer with dynamic waveform rendering and beat detection. Built for music lovers and audio engineers.</p>
-            <div class="project-tech">
-              <span>React</span><span>Web Audio API</span><span>Canvas</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
-              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
-            </div>
-          </div>
+          <h3 class="work-title">Checkout Funnel Redesign</h3>
+          <p class="work-desc">
+            Led end-to-end redesign of a 5-step checkout flow, driven by drop-off analysis and three rounds of user testing. Delivered a 22% reduction in cart abandonment.
+          </p>
+          <div class="work-stack">SQL · Mixpanel · Figma · A/B Test</div>
+          <a href="#" class="work-link">Read Case Study →</a>
         </article>
 
-        <article class="project-panel comic-panel reveal">
-          <div class="project-img-wrap">
-            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #006B5E 0%, #1F1456 100%)">PROJECT 02</div>
-            <div class="project-tag-badge">Dashboard</div>
+        <article class="work-card reveal">
+          <div class="work-card-top">
+            <span class="work-tag">Analytics · Strategy</span>
+            <span class="work-year">2022</span>
           </div>
-          <div class="project-content">
-            <h3 class="project-title">VisualGroove</h3>
-            <p class="project-desc">Interactive music dashboard integrating Spotify API with real-time data visualization, playlist analytics, and social features.</p>
-            <div class="project-tech">
-              <span>Next.js</span><span>Spotify API</span><span>D3.js</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
-              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
-            </div>
-          </div>
+          <h3 class="work-title">Churn Prediction Model</h3>
+          <p class="work-desc">
+            Built a logistic regression model identifying at-risk users 30 days before churn. Partnered with the growth team on targeted interventions — reduced churn 14% in one quarter.
+          </p>
+          <div class="work-stack">Python · SQL · Tableau · Segment</div>
+          <a href="#" class="work-link">Read Case Study →</a>
         </article>
 
-        <article class="project-panel comic-panel reveal">
-          <div class="project-img-wrap">
-            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #C9900C 0%, #7B1F1F 100%)">PROJECT 03</div>
-            <div class="project-tag-badge">E-Commerce</div>
+        <article class="work-card reveal">
+          <div class="work-card-top">
+            <span class="work-tag">Product · 0→1</span>
+            <span class="work-year">2023</span>
           </div>
-          <div class="project-content">
-            <h3 class="project-title">ShopKart Pro</h3>
-            <p class="project-desc">Full-featured e-commerce platform with inventory management, payment gateway integration, and real-time order tracking.</p>
-            <div class="project-tech">
-              <span>Node.js</span><span>MongoDB</span><span>Stripe</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
-              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-panel comic-panel reveal">
-          <div class="project-img-wrap">
-            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1F1456 0%, #006B5E 100%)">PROJECT 04</div>
-            <div class="project-tag-badge">Mobile</div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">TaskFlow</h3>
-            <p class="project-desc">Cross-platform productivity app with drag-and-drop kanban boards, team collaboration, and smart deadline reminders.</p>
-            <div class="project-tech">
-              <span>React Native</span><span>Firebase</span><span>Redux</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
-              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-panel comic-panel reveal">
-          <div class="project-img-wrap">
-            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #7B1F1F 0%, #C9900C 100%)">PROJECT 05</div>
-            <div class="project-tag-badge">AI Tool</div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">DevMind AI</h3>
-            <p class="project-desc">AI-powered code reviewer and bug detector that analyzes GitHub repositories and suggests optimizations using LLM integration.</p>
-            <div class="project-tech">
-              <span>Python</span><span>OpenAI</span><span>FastAPI</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-sm btn-primary">Live Demo</a>
-              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-panel comic-panel reveal">
-          <div class="project-img-wrap">
-            <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1F1456 0%, #7B1F1F 100%)">PROJECT 06</div>
-            <div class="project-tag-badge">Open Source</div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">UIStorm</h3>
-            <p class="project-desc">Open-source React component library with 50+ accessible components, custom theming, and comprehensive Storybook documentation.</p>
-            <div class="project-tech">
-              <span>React</span><span>TypeScript</span><span>Storybook</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-sm btn-primary">Docs</a>
-              <a href="#" class="btn btn-sm btn-ghost">GitHub</a>
-            </div>
-          </div>
+          <h3 class="work-title">Internal Analytics Platform</h3>
+          <p class="work-desc">
+            Defined, scoped, and shipped a self-serve analytics dashboard used by 200+ non-technical stakeholders — replacing 40 recurring reports and saving 20 analyst hours per week.
+          </p>
+          <div class="work-stack">Looker · PRD · User Research · Jira</div>
+          <a href="#" class="work-link">Read Case Study →</a>
         </article>
 
       </div>
@@ -264,63 +244,67 @@
   <!-- ===== EXPERIENCE ===== -->
   <section id="experience" class="section experience-section">
     <div class="container">
-      <div class="section-label reveal">// BATTLE HISTORY</div>
-      <h2 class="section-title reveal">EXPERIENCE</h2>
+      <div class="section-kicker reveal">Experience</div>
+      <div class="gold-rule reveal"></div>
+      <h2 class="section-title reveal">The Journey.</h2>
+
       <div class="timeline">
 
         <div class="timeline-item reveal">
-          <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-panel comic-panel">
-            <div class="timeline-header">
-              <h3 class="timeline-role">Senior Full Stack Developer</h3>
-              <span class="timeline-date">2022 — Present</span>
-            </div>
-            <div class="timeline-company">Tech Corp India Pvt. Ltd. · Bangalore</div>
-            <ul class="timeline-bullets">
-              <li>Led development of microservices architecture serving 100K+ daily users</li>
-              <li>Reduced page load times by 60% through advanced optimization strategies</li>
-              <li>Mentored and grew a team of 5 junior developers</li>
+          <div class="tl-meta">
+            <div class="tl-date">2022 — Present</div>
+            <div class="tl-company">Tech Corp India</div>
+          </div>
+          <div class="tl-connector">
+            <div class="tl-dot tl-dot-active"></div>
+          </div>
+          <div class="tl-body">
+            <div class="tl-badge tl-badge-pm">Product Manager</div>
+            <h3 class="tl-role">Product Manager, Growth</h3>
+            <ul class="tl-bullets">
+              <li>Own the growth product roadmap for a B2C platform with 2M+ monthly active users</li>
+              <li>Drive 0→1 features through full cycle: discovery, spec, engineering, launch, iteration</li>
+              <li>Manage cross-functional team of 8 across engineering, design, and data</li>
+              <li>Reduced onboarding drop-off by 31% through structured experimentation programme</li>
             </ul>
-            <div class="timeline-stack">
-              <span>React</span><span>Node.js</span><span>AWS</span><span>PostgreSQL</span>
-            </div>
           </div>
         </div>
 
         <div class="timeline-item reveal">
-          <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-panel comic-panel">
-            <div class="timeline-header">
-              <h3 class="timeline-role">Full Stack Developer</h3>
-              <span class="timeline-date">2020 — 2022</span>
-            </div>
-            <div class="timeline-company">Startup Studio · Bangalore</div>
-            <ul class="timeline-bullets">
-              <li>Built 3 SaaS products from scratch in a fast-paced startup environment</li>
-              <li>Implemented payment gateway handling 10K+ monthly transactions</li>
-              <li>Collaborated with design and product to ship features every sprint</li>
+          <div class="tl-meta">
+            <div class="tl-date">2021 — 2022</div>
+            <div class="tl-company">Series B Startup, Bangalore</div>
+          </div>
+          <div class="tl-connector">
+            <div class="tl-dot tl-dot-bridge"></div>
+          </div>
+          <div class="tl-body">
+            <div class="tl-badge tl-badge-bridge">Senior Analyst → Associate PM</div>
+            <h3 class="tl-role">Senior Analyst / Associate PM</h3>
+            <ul class="tl-bullets">
+              <li>Transitioned from analytics into product by leading data-informed feature work end-to-end</li>
+              <li>Wrote first PRDs and managed a sprint team of 4 engineers</li>
+              <li>Built churn prediction model that influenced $800K in ARR retention decisions</li>
             </ul>
-            <div class="timeline-stack">
-              <span>Next.js</span><span>MongoDB</span><span>Stripe</span>
-            </div>
           </div>
         </div>
 
         <div class="timeline-item reveal">
-          <div class="timeline-dot" aria-hidden="true"></div>
-          <div class="timeline-panel comic-panel">
-            <div class="timeline-header">
-              <h3 class="timeline-role">Frontend Developer (Intern)</h3>
-              <span class="timeline-date">2019 — 2020</span>
-            </div>
-            <div class="timeline-company">Digital Agency · Mumbai</div>
-            <ul class="timeline-bullets">
-              <li>Developed responsive UI components for 10+ client websites</li>
-              <li>Integrated RESTful APIs and third-party services across projects</li>
+          <div class="tl-meta">
+            <div class="tl-date">2019 — 2021</div>
+            <div class="tl-company">Enterprise Corp</div>
+          </div>
+          <div class="tl-connector">
+            <div class="tl-dot tl-dot-analyst"></div>
+          </div>
+          <div class="tl-body">
+            <div class="tl-badge tl-badge-analyst">Business Analyst</div>
+            <h3 class="tl-role">Business Analyst, Operations</h3>
+            <ul class="tl-bullets">
+              <li>Built executive dashboards tracking $50M+ in operational spend across 6 business units</li>
+              <li>Delivered weekly C-suite reports; reduced data reporting lag from 3 days to same-day</li>
+              <li>Automated 14 manual Excel processes using Python and SQL, saving ~30 hours per week</li>
             </ul>
-            <div class="timeline-stack">
-              <span>React</span><span>CSS3</span><span>REST APIs</span>
-            </div>
           </div>
         </div>
 
@@ -331,29 +315,28 @@
   <!-- ===== EDUCATION ===== -->
   <section id="education" class="section education-section">
     <div class="container">
-      <div class="section-label reveal">// TRAINING GROUNDS</div>
-      <h2 class="section-title reveal">EDUCATION</h2>
-      <div class="edu-grid">
-        <div class="edu-card comic-panel reveal">
-          <div class="edu-icon">🎓</div>
-          <h3 class="edu-degree">B.Tech Computer Science</h3>
-          <div class="edu-school">XYZ University of Technology</div>
-          <div class="edu-year">2016 — 2020</div>
-          <div class="edu-grade">CGPA: 8.5 / 10</div>
+      <div class="section-kicker reveal">Education</div>
+      <div class="gold-rule reveal"></div>
+      <div class="edu-row">
+        <div class="edu-item reveal">
+          <div class="edu-year">2015 — 2019</div>
+          <h3 class="edu-degree">B.Tech, Computer Science</h3>
+          <div class="edu-school">XYZ Institute of Technology</div>
+          <div class="edu-detail">GPA 8.4 / 10 · Minor in Statistics</div>
         </div>
-        <div class="edu-card comic-panel reveal">
-          <div class="edu-icon">📜</div>
-          <h3 class="edu-degree">Full Stack Web Dev</h3>
-          <div class="edu-school">The Odin Project / freeCodeCamp</div>
-          <div class="edu-year">2020</div>
-          <div class="edu-grade">Certification</div>
+        <div class="edu-sep" aria-hidden="true"></div>
+        <div class="edu-item reveal">
+          <div class="edu-year">2023</div>
+          <h3 class="edu-degree">Product Management Certification</h3>
+          <div class="edu-school">Product School</div>
+          <div class="edu-detail">Cohort of 40 PMs across Asia</div>
         </div>
-        <div class="edu-card comic-panel reveal">
-          <div class="edu-icon">☁️</div>
-          <h3 class="edu-degree">AWS Cloud Practitioner</h3>
-          <div class="edu-school">Amazon Web Services</div>
+        <div class="edu-sep" aria-hidden="true"></div>
+        <div class="edu-item reveal">
           <div class="edu-year">2022</div>
-          <div class="edu-grade">Certified</div>
+          <h3 class="edu-degree">Data Science Professional</h3>
+          <div class="edu-school">IBM / Coursera</div>
+          <div class="edu-detail">Specialisation in ML &amp; Data Analysis</div>
         </div>
       </div>
     </div>
@@ -361,46 +344,29 @@
 
   <!-- ===== CONTACT ===== -->
   <section id="contact" class="section contact-section">
+    <div class="contact-glow" aria-hidden="true"></div>
     <div class="container">
-      <div class="section-label reveal">// SEND A SIGNAL</div>
-      <h2 class="section-title reveal">CONTACT</h2>
-      <div class="contact-grid">
-
-        <div class="contact-info reveal">
-          <div class="big-speech-bubble comic-panel">
-            <p class="contact-heading">Let's build something<br><strong>AMAZING</strong> together!</p>
-            <div class="contact-links">
-              <a href="mailto:vishal@example.com" class="contact-link">
-                <span class="contact-icon">✉</span> vishal@example.com
-              </a>
-              <a href="#" class="contact-link">
-                <span class="contact-icon">in</span> linkedin.com/in/shrivishal
-              </a>
-              <a href="#" class="contact-link">
-                <span class="contact-icon">gh</span> github.com/shrivishal
-              </a>
-            </div>
-          </div>
+      <div class="contact-inner reveal">
+        <div class="section-kicker">Contact</div>
+        <div class="gold-rule"></div>
+        <h2 class="contact-heading">Let's talk<br><em>product.</em></h2>
+        <p class="contact-sub">
+          Open to PM roles, consulting work, or a conversation about data and product strategy.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:vishal@example.com" class="contact-link">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-val">vishal@example.com →</span>
+          </a>
+          <a href="#" class="contact-link">
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-val">linkedin.com/in/shrivishal →</span>
+          </a>
+          <a href="#" class="contact-link">
+            <span class="contact-link-label">GitHub</span>
+            <span class="contact-link-val">github.com/shrivishal →</span>
+          </a>
         </div>
-
-        <div class="contact-form-wrap reveal">
-          <form class="contact-form comic-panel" id="contact-form" novalidate>
-            <div class="form-group">
-              <label for="contact-name">Name</label>
-              <input id="contact-name" type="text" placeholder="Your Name" class="form-input" />
-            </div>
-            <div class="form-group">
-              <label for="contact-email">Email</label>
-              <input id="contact-email" type="email" placeholder="your@email.com" class="form-input" />
-            </div>
-            <div class="form-group">
-              <label for="contact-message">Message</label>
-              <textarea id="contact-message" placeholder="Tell me about your project..." class="form-input" rows="5"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">Send Message ✦</button>
-          </form>
-        </div>
-
       </div>
     </div>
   </section>
@@ -408,14 +374,10 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">VS<span>.</span></div>
-        <p class="footer-text">© 2025 Vishal Shrivastava · Made with ☕ &amp; Code in India 🇮🇳</p>
-        <div class="footer-links">
-          <a href="#hero">Top ↑</a>
-          <a href="#projects">Work</a>
-          <a href="#contact">Contact</a>
-        </div>
+      <div class="footer-inner">
+        <span class="footer-name">Vishal Shrivastava</span>
+        <span class="footer-copy">© 2025 · Bangalore, India</span>
+        <a href="#hero" class="footer-top">Back to top ↑</a>
       </div>
     </div>
   </footer>
